@@ -103,3 +103,44 @@ body {
 .container1 p a:hover {
     text-decoration: underline;
 }
+.login-box {
+    background: #ffffff;
+    padding: 30px 25px;
+    width: 320px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+.abc {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.abc:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76,175,80,0.3);
+}
+
+.login-box a {
+    display: inline-block;
+    width: 95%;
+    padding: 12px;
+    margin-top: 10px;
+    background: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.login-box a:hover {
+    background: #43a047;
+}

@@ -1,6 +1,7 @@
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate,login
 
 def home(request):
     return render(request,"core/Home.html")
@@ -31,5 +32,24 @@ def register(request):
 
 
     return render(request,"core/register.html")
-def login(request):
+
+
+def login_page(request):
+    if request.method=="POST":
+        username=request.POST.get("username1")
+        password=request.POST.get("password1")
+        if not User.objects.filter(username=username).exists():
+            messages.info(request,'Username does not exists!')
+
+            return redirect('/login/')
+        user=authenticate(username=username,password=password)
+        if user is None:
+            messages.info(request,'User password is wrong!')
+            return redirect('/login/')
+        else:
+            login(request,user)
+            return redirect('/main/')
     return render(request,'core/login.html')
+
+def main(request):
+    return render (request,'core/main.html')
